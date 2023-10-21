@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>product-list works!</p>
+    <div *ngIf="products.length > 0; then showTable; else noData"></div>
+    <ng-template #showTable>
+      <table>
+        <thead>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Type</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.Description }}</td>
+            <td>{{ product.type }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-template>
+    <ng-template #noData>
+      <p>No data present</p>
+    </ng-template>
+    <br />
+    <div [ngSwitch]="value">
+      <div *ngSwitchCase="1">Value 1</div>
+      <div *ngSwitchCase="2">Value 2</div>
+      <div *ngSwitchCase="3">Value 3</div>
+      <div *ngSwitchDefault>Default</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- TS to html-->
+    <!-- String interpolation -->
+    <p>{{ title }}</p>
+    <!--img src="{{ imgPath }}"  /-->
+    <!-- Property binding -->
+
+    <img [src]="isValid() ? imgPath : diffImg" />
+    <!-- Event binding -->
+    <button [disabled]="!isValid()" (click)="onClick()">Click Me</button>
+
+    <!-- template(html) to component(TS) Event binding-->
+    <div *ngIf="isAdmin; then adminBlock; else userBlock"></div>
+    <ng-template #adminBlock><p>Admin</p></ng-template>
+    <ng-template #userBlock><p>User</p></ng-template>
+  </body>
+  <footer>
+    <a [routerLink]="'/products'">Products&nbsp;&nbsp;</a>
+    <a [routerLink]="'/home'">Home</a>
+    <router-outlet></router-outlet>
+  </footer>
+</html>
