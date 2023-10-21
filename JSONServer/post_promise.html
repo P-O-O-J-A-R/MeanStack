@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Fetch API</h1>
+    <h2>POST Method</h2>
+
+    <script>
+      function postData() {
+        const employeeData = {
+          id: 3,
+          name: "Brian",
+          position: "SSE",
+        };
+        const headers = {
+          "Content-Type": "application/json",
+        };
+
+        //POST request
+        fetch("http://localhost:3000/employees", {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify(employeeData),
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            alert("Employee added successfully" + data);
+          })
+          .catch((error) => {
+            alert("Employee not added!!!!!!1");
+          });
+      }
+
+      function putData() {
+        const employeeData = {
+          id: 3,
+          name: "Brian",
+          position: "Fresher",
+        };
+        const headers = {
+          "Content-Type": "application/json",
+        };
+
+        //POST request
+        fetch("http://localhost:3000/employees/3", {
+          method: "PUT",
+          headers: headers,
+          body: JSON.stringify(employeeData),
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            alert("Employee updated successfully" + data);
+          })
+          .catch((error) => {
+            alert("Employee not updated!!!!!!1");
+          });
+      }
+
+      function deleteData() {
+        //POST request
+        fetch("http://localhost:3000/employees/3", {
+          method: "DELETE",
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            alert("Employee deleted successfully" + data);
+          })
+          .catch((error) => {
+            alert("Employee not deleted!!!!!!1");
+          });
+      }
+    </script>
+    <div>
+      <button onclick="deleteData()">Delete</button>
+      <button onclick="putData()">Update</button>
+      <button onclick="postData()">Add</button>
+    </div>
+  </body>
+</html>

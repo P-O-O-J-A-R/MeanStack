@@ -1,24 +1,24 @@
 {
-    "employees":[
-        {
-            "id":1,
-            "name":"John",
-            "position":"SE"
-        },
-        {
-            "id":2,
-            "name":"Alex",
-            "position":"Lead"
-        }
-    ],
-    "posts":[
-        {
-            "id":1,
-            "name": "SE"
-        },
-        {
-            "id":2,
-            "name": "Lead"
-        }
-    ]
+  "employees": [
+    {
+      "id": 2,
+      "name": "Alex",
+      "position": "Lead"
+    },
+    {
+      "id": 3,
+      "name": "Brian",
+      "position": "Fresher"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "name": "SE"
+    },
+    {
+      "id": 2,
+      "name": "Lead"
+    }
+  ]
 }
