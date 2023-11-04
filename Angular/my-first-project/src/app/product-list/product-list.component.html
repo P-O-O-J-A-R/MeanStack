@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+<div>
+  <ul>
+    <li *ngFor="let category of categories">
+      <a [routerLink]="[category]">{{ category }}</a>
+      <!--a [routerLink]="[category]" [queryParams]="{ Type: category }">{{
+        category
+      }}</a-->
+    </li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>
+
+<!--<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -38,3 +51,4 @@
     </div>
   </body>
 </html>
+-->
